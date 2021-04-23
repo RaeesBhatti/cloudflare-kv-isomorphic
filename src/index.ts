@@ -1,4 +1,4 @@
-import { promises as fs } from "fs";
+import fs from "fs";
 
 export default function getKv(namespace): KV {
   if (typeof global[namespace] !== "undefined") return global[namespace];
@@ -16,7 +16,7 @@ class KV {
     if (this.initiated) return;
 
     this.filename = `./.kv-${encodeURIComponent(this.namespace)}`;
-    const contents = await fs.readFile(this.filename, { encoding: "utf8", flag: "as+" });
+    const contents = await fs.promises.readFile(this.filename, { encoding: "utf8", flag: "as+" });
     this.data = JSON.parse(contents || "{}");
     const now = new Date().getTime() / 1000;
     Object.entries(this.data).forEach(([k, v]) => {
@@ -41,7 +41,7 @@ class KV {
     }
 
     this.data[key] = [value, expiresAt];
-    await fs.writeFile(this.filename, JSON.stringify(this.data), { encoding: "utf8" });
+    await fs.promises.writeFile(this.filename, JSON.stringify(this.data), { encoding: "utf8" });
     return value;
   }
 
@@ -53,7 +53,7 @@ class KV {
   async delete(key: string) {
     await this.init();
     const value = delete this.data[key];
-    await fs.writeFile(this.filename, JSON.stringify(this.data), { encoding: "utf8" });
+    await fs.promises.writeFile(this.filename, JSON.stringify(this.data), { encoding: "utf8" });
     return value;
   }
 
