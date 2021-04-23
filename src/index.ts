@@ -60,6 +60,6 @@ class KV {
 
   async list(prefix: string = "", limit: number = 0, cursor) {
     await this.init();
-    return Object.keys(this.data).filter(k => k.startsWith(prefix)).slice(0, limit + 1);
+    return { keys: Object.keys(this.data).filter(k => k.startsWith(prefix)).slice(0, limit + 1) };
   }
 }
