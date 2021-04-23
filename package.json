@@ -1,7 +1,7 @@
 {
-  "name": "kv-isomorphic",
-  "version": "0.0.4",
-  "description": "Use Cloudflare's Worker KV locally (local storage) and in production using the same API",
+  "name": "cloudflare-kv-local",
+  "version": "0.0.5",
+  "description": "Locally emulated API compatible with Cloudflare KV",
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RaeesBhatti/kv-isomorphic.git"
+    "url": "git+https://github.com/RaeesBhatti/cloudflare-kv-local.git"
   },
   "keywords": [
     "cloudflare",
@@ -26,9 +26,9 @@
   "author": "Raees Iqbal",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RaeesBhatti/kv-isomorphic/issues"
+    "url": "https://github.com/RaeesBhatti/cloudflare-kv-local/issues"
   },
-  "homepage": "https://github.com/RaeesBhatti/kv-isomorphic#readme",
+  "homepage": "https://github.com/RaeesBhatti/cloudflare-kv-local#readme",
   "devDependencies": {
     "@types/node": "^14.14.41",
     "typescript": "^4.2.4"
