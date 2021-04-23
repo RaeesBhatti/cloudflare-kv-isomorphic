@@ -1,11 +1,17 @@
 import fs from "fs";
 
-export default class KV {
+export default function (namespace): KV {
+  if (typeof globalThis[namespace] !== "undefined") return globalThis[namespace];
+  return globalThis[namespace] = new KV(namespace);
+}
+
+class KV {
   initiated = false;
   data: Record<string, [unknown, number | null]>;
   filename;
 
-  constructor(public namespace) {}
+  constructor(public namespace) {
+  }
 
   async init() {
     if (this.initiated) return;

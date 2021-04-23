@@ -1,14 +1,14 @@
-# cloudflare-kv-local
+# cloudflare-kv-isomorphic
 
-Locally emulated API compatible with Cloudflare KV
+Use Cloudflare Worker KV locally (local storage) and in production using the same API
 
 ## Usage
 
 ```typescript
-import KV from "cloudflare-kv-local";
+import KV from "cloudflare-kv-isomorphic";
 
-const kv = (typeof MY_NAMESPACE !== "undefined" ? MY_NAMESPACE : new KV("MY_NAMESPACE")) /* as KV */;
+const MY_NAMESPACE = KV("MY_NAMESPACE");
 
-await kv.put("key", "value");
-await kv.get("key");
+await MY_NAMESPACE.put("key", "value");
+await MY_NAMESPACE.get("key");
 ```
