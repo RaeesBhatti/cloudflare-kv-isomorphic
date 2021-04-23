@@ -1,6 +1,6 @@
 {
   "name": "kv-isomorphic",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Use Cloudflare's Worker KV locally (local storage) and in production using the same API",
   "main": "lib/index.js",
   "type": "module",
