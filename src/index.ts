@@ -1,11 +1,6 @@
 import fs from "fs";
 
-export default function getKv(namespace): KV {
-  if (typeof global[namespace] !== "undefined") return global[namespace];
-  return new KV(namespace)
-}
-
-class KV {
+export default class KV {
   initiated = false;
   data: Record<string, [unknown, number | null]>;
   filename;
