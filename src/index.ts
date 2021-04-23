@@ -16,7 +16,7 @@ class KV {
   async init() {
     if (this.initiated) return;
 
-    this.filename = `./.kv-${encodeURIComponent(this.namespace)}`;
+    this.filename = `./.kv-${encodeURIComponent(this.namespace)}.json`;
     const contents = await fs.promises.readFile(this.filename, { encoding: "utf8", flag: "as+" });
     this.data = JSON.parse(contents || "{}");
     const now = new Date().getTime() / 1000;
