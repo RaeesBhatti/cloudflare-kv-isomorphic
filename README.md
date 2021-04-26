@@ -1,6 +1,6 @@
 # cloudflare-kv-isomorphic
 
-Use Cloudflare Worker KV locally (local storage) and in production using the same API
+Use Cloudflare Worker KV locally in NodeJS and in production using the same API
 
 ## Usage
 
