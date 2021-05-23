@@ -23,6 +23,7 @@ class KV {
     Object.entries(this.data).forEach(([k, v]) => {
       if (v[1] != null && v[1] < now) this.delete(k);
     });
+    this.initiated = true;
   }
 
   async put(key: string, value: string | ArrayBuffer, options: { expiration?: number, expirationTtl?: number } = {}) {
